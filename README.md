@@ -1,11 +1,11 @@
 # Santa List
--Create express app, configure knex
--ERD to migrations
--Seed db
--Build routes (get all, get one, post, put, delete)
--Deploy to heroku
--Create frontend to consume our API
--Re-deploy to heroku
+- Create express app, configure knex
+- ERD to migrations
+- Seed db
+- Build routes (get all, get one, post, put, delete)
+- Deploy to heroku
+- Create frontend to consume our API
+- Re-deploy to heroku
 
 ## Steps:
 mkdir santa_warmup
