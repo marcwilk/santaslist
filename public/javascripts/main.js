@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
 
   let ul = document.querySelector('ul')
-  axios.get('/users')
+
+  getAllUsers()
   .then((results) => {
     for (let i = 0; i < results.data.length; i++) {
       let li = document.createElement('li')
@@ -10,4 +11,5 @@ document.addEventListener('DOMContentLoaded', function() {
       ul.appendChild(li)
     }
   })
+
 })
