@@ -21,4 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log(results.data)
     })
   })
+
+  let deleteButton = document.querySelector('#deleteButton')
+  deleteButton.addEventListener('click', function(event) {
+    deleteUser(userId)
+    .then(results => {
+      console.log(results.data)
+    })
+  })
+
 })
