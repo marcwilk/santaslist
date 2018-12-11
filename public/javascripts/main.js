@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
   form.addEventListener('submit', function(event) {
     event.preventDefault()
     let user = {}
-    user.name = "Marc"
-    user.isNice = "true"
+    user.name = event.target.name.value
+    user.isNice = event.target.nice.checked
     createNewUser(user)
     .then(results => {
       console.log(results.data)
