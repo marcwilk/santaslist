@@ -24,6 +24,19 @@ router.get('/:id', function(req, res, next) {
   })
 })
 
+router.get('/:id/presents', function(req, res, next) {
+  knex('users')
+  .select('name', 'isNice', 'description')
+  .where('users.id', req.params.id)
+  .join('presents', 'users.id','recipient')
+  .then((data) => {
+    res.send(data)
+  })
+  .catch(err => {
+    next(err)
+  })
+})
+
 router.post('/', function(req, res, next) {
   knex('users')
   .insert(req.body, '*')
@@ -51,11 +64,10 @@ router.patch('/:id', function(req, res, next) {
 router.delete('/:id', function(req, res, next) {
   knex('users')
   .where('id', req.params.id)
-  .first()
   .returning('*')
   .del()
   .then((data) => {
-    res.send(data)
+    res.send(data[0])
   })
   .catch(err => {
     next(err)
